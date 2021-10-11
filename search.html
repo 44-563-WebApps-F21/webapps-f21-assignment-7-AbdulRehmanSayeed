@@ -100,51 +100,32 @@ Distance unknown
         for(var i = 0; i < ids.length; i++){
             if(position == i){
                 id = ids[i];
-            }
-        }
-
+            } }
         if(id.localeCompare(animalLocation)){
-            document.getElementById(id).src = "dirt.jpg";
-        }
+            document.getElementById(id).src = "dirt.jpg";}
         else{
-            document.getElementById(id).src = "animal.jpg";     
-        }
-
+            document.getElementById(id).src = "animal.jpg";     }
         triesCount = triesCount+1;
         document.getElementById("tries").innerHTML = "Number of tries is " +triesCount;
         var Distance = distance(id, animalLocation);
-        document.getElementById("distance").innerHTML = "Distance is " +Distance;
-    
-    
+        document.getElementById("distance").innerHTML = "Distance is " +Distance;   
     function distance(pos1, pos2){
             var grid =[[0, 1, 2, 3, 4],[5, 6, 7, 8, 9],[10, 11, 12, 13, 14],[15, 16, 17, 18, 19],[20, 21, 22, 23, 24]]
             var x1 = 0, y1 = 0, x2 = 0, y2 = 0;
-
             for (var i = 0; i < 5; i++) {
                 for (var j = 0; j < 5; j++){
                     if (grid[i][j] == pos1) {
                         x1 = i;
                         y1 = j;
-                        break;
-                    }
-                }
-            }
-
-
+                        break;}}}
             for (var i = 0; i < 5; i++) {
                 for (var j = 0; j < 5; j++){
                     if (grid[i][j] == pos2) {
                         x2 = i;
                         y2 = j;
-                        break;
-                    }
-                }
-            }
-
+                        break;}}}
             var Distance = Math.abs(x2-x1) + Math.abs(y2-y1);
-            return Distance;
-            }
-          }
+            return Distance; } }
           
 </script>
 </html>
