@@ -22,7 +22,7 @@
 </head>
 
 <h1>Abdul Rehman Sayeed Mohammed buils a Stack</h1>
-<input id="text" type="text">
+<input id="texts" type="text">
 <body>
 		<div class="flex-container" id="target">
 		  <div class="stack">row item 1</div>   
@@ -34,13 +34,14 @@
 		</p>
 		<button onclick="makeNewDiv()">Push value</button>
 	
-	
+	<button onclick="popItem()">pop</button>
+	<button onclick="zap()">zap</button>
 </body>
 <script>
 	function makeNewDiv(){
 		/* make the div and its text */
 		let element = document.createElement("div")
-		element.innerHTML = document.getElementById("text").value
+		element.innerHTML = document.getElementById("texts").value
 		element.className = "stack"
 		element.style.color = "orange"
 
@@ -49,5 +50,25 @@
 		document.getElementById('target').appendChild(element)
 		
 	}
+	function popItem(){
+		var stackItems = document.getElementsByClassName("stack")
+		if(stackItems.length>0){
+			stackItems[stackItems.length-1].remove()
+		}
+	}
+	
+	function zap(){
+		var stackItems = document.getElementsByClassName("stack")
+		input = document.getElementById("texts").value
+            for (var k = 0; k < stackItems.length; k++) {
+                if (stackItems[k].innerHTML == input) {
+                    stackItems[k].remove();
+                    console.log("(We are getting rid of all elements with that text ");
+                }
+				else{
+					console.log("element not found")
+				}
+			}
+		}
 </script>
 </html>	
